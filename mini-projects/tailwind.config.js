@@ -34,7 +34,6 @@ export default {
               'text-gradient': 'linear-gradient(to right, #351d54, #bdabf4)',
               'calc-gradient': 'linear-gradient(to right, #906ac1, #a78bfa)',
               'save-gradient': 'linear-gradient(to right, #906ac1, #a78bfa)',
-
           },
           fontSize: {
               '1.5xl': '1.3rem'
