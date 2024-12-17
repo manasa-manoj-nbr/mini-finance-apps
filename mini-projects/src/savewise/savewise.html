@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Save Wise</title>
+    <link rel="stylesheet" href="../output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-[#0f172a] p-0 m-0 font-Roboto box-border min-h-screen text-[#e2e8f0]"
+  >
+  <a href="../../index.html" class="save-gradient  absolute top-4 left-6"><i class="fa-solid fa-house"></i></a>
+    <div class="header text-center py-12 px-4 bg-savings">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4 save-gradient">
+        Save Wise
+      </h1>
+      <p class="my-0 mx-auto text-[#94a3b8] max-w-[600px] leading-relaxed">
+        Plan your savings goals effectively and track how your money grows over
+        time.
+      </p>
+    </div>
+
+    <div
+      class="container max-w-6xl my-0 mx-auto y-0 px-6 grid md:grid-cols-[1fr_1fr] gap-8"
+    >
+      <div
+        class="calculator bg-[#1e293b] p-8 rounded-3xl border border-[#334155]"
+      >
+        <div class="input-group mb-6">
+          <label
+            for="goalAmt"
+            class="block mb-3 text-[#e2e8f0] text-base font-semibold uppercase tacking tracking-wide"
+            ><i class="fa-solid fa-bullseye"></i> Savings Goal Amount
+          </label>
+          <input
+            type="number"
+            id="goalAmt"
+            placeholder="Enter your savings goal"
+            class="w-full p-4 bg-[#0f172a] border border-[#334155] rounded-xl text-[#e2e8f0] text-base transition-all duration-300 ease-in-out focus:outline-none focus:border-[#60a5fa] focus:shadow-[0_0_0_3px_rgba(96,165,250,0.1)]"
+          />
+        </div>
+        <div class="input-group mb-6">
+          <label
+            for="current"
+            class="block mb-3 text-[#e2e8f0] text-base font-semibold uppercase tacking tracking-wide"
+            ><i class="fa-solid fa-coins"></i> Current Savings
+          </label>
+          <input
+            type="number"
+            id="current"
+            placeholder="Enter your current savings"
+            class="w-full p-4 bg-[#0f172a] border border-[#334155] rounded-xl text-[#e2e8f0] text-base transition-all duration-300 ease-in-out focus:outline-none focus:border-[#60a5fa] focus:shadow-[0_0_0_3px_rgba(96,165,250,0.1)]"
+          />
+        </div>
+        <div class="input-group mb-6">
+          <label
+            for="monthly"
+            class="block mb-3 text-[#e2e8f0] text-base font-semibold uppercase tacking tracking-wide"
+            ><i class="fa-regular fa-calendar-check"></i>
+            Monthly Contribution
+          </label>
+          <input
+            type="number"
+            id="monthly"
+            placeholder="Enter your monthly contribution"
+            class="w-full p-4 bg-[#0f172a] border border-[#334155] rounded-xl text-[#e2e8f0] text-base transition-all duration-500 ease-in-out focus:outline-none focus:border-[#60a5fa] focus:shadow-[0_0_0_3px_rgba(96,165,250,0.1)]"
+          />
+        </div>
+        <button
+          id="calculate-btn"
+          class="calculator-button w-full p-4 bg-[linear-gradient(to_right,_#60a5fa,_#a78bfa)] text-white rounded-xl text-base cursor-pointer transition-all duration-300 hover:opacity-90 hover:translate-y-[-2px] active:translate-y-0"
+        >
+          <i class="fas fa-calculator"></i>Grow Your Savings
+        </button>
+      </div>
+
+      <div class="result bg-[#1e293b] p-8 rounded-3xl border border-[#334155]">
+        <div class="image">
+            <img src="./rb_3254.png" alt="result-image" class="w-[65%] mx-auto" />
+        </div>
+        
+        <div class="progress-container mt-2 bg-[rgba(255, 255, 255, 0.5)] rounded-lg relative">
+            <div
+                class="progress-bar relative h-6 w-0 rounded-lg bg-[linear-gradient(to_right,_#60a5fa,_#a78bfa)] overflow-hidden transition-all duration-1000 ease-in-out after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-stripes after:bg-[length:50px_50px] after:animate-move"
+                id="progress-bar">
+            </div>
+
+            <div
+                id="result"
+                class="mt-8 opacity-0 save-gradient text-2xl font-semibold translate-y-5 transition-all duration-500 ease-in-out [&.show]:opacity-100 [&.show]:translate-y-0">
+            </div>
+        </div>
+    </div>
+    
+    </div>
+    <script src="./savewise.js"></script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Buddy</title>
+    <link rel="stylesheet" href="../output.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+</head>
+<body class="bg-[url('./tipCalc/tipBuddy.jpg')]  bg-no-repeat bg-55 bg-center font-Roboto m-0 p-0 box-border">
+    <a href="../../index.html" class="text-tip-para mx-7  mt-8 inline-block"><i class="fa-solid fa-house"></i></a>
+    <div class="container mx-auto h-[80vh] w-[90%] md:w-[80%] lg:w-[70%] rounded-xl shadow-lg overflow-hidden my-8 md:pb-12">
+        <div class="header  flex flex-row items-center h-auto md:h-[30%] bg-opacity-90 bg-[rgb(180,193,227)] pb-4 pt-8 px-4 md:px-8 gap-4">
+            <div class="text basis-3/4 text-center">
+                <h1 class="text-3xl md:text-[2.5rem] font-bold text-gradient mb-4">Tip Buddy</h1>
+                <p class="text-base md:text-lg text-tip-para pb-4">Your Go-To Tool for Splitting Bills and Calculating Tips Like a Pro!</p>
+            </div>
+            <div class="img basis-1/4"><img src="./payment.png" alt="title-icon" class="w-20 md:w-24"></div>
+        </div>
+
+        <div class="body flex lg:flex-row gap-6 p-4 md:px-8 md:py-12">
+            <div class="input-content basis-1/2 md:basis-2/5 flex-cols justify-center md:mr-10">
+                <div class="input-group relative mb-4">
+                    <label for="billAmt" class="text-base md:text-lg font-semibold text-tip-text"><i class="fa-solid fa-clipboard-list"></i>
+                        Bill Amount</label>
+                    <input type="number" step="0.1" id="billAmt" class="mt-2 w-full px-4 py-2 border-2 border-[#94a4db] opacity-80 rounded-lg text-base transition-all duration-300 focus:outline-none focus:border-[#7738c7] focus:ring-4 focus:ring-[#592b96]/20">                  
+                </div>
+                <div class="input-group relative mb-4">
+                    <label for="tip" class="text-base md:text-lg font-semibold text-tip-text"><i class="fa-solid fa-star"></i>
+                        Service Rating</label>
+                    <select id="tip" class="mt-2 w-full px-4 py-2 border-2 border-[#94a4db] opacity-80 rounded-lg text-base transition-all duration-300 focus:outline-none focus:border-[#7738c7] focus:ring-4 focus:ring-[#592b96]/20">
+                        <option value="0.2">20% Exceptional</option>
+                        <option value="0.15">15% Great</option>
+                        <option value="0.1">10% Good</option>
+                        <option value="0.05">5% Fair</option>
+                    </select>
+                </div>
+                <div class="input-group relative mb-6">
+                    <label for="ppl" class="text-base md:text-lg font-semibold text-tip-text"><i class="fa-solid fa-users"></i>
+                        Number of people</label>
+                    <input type="number"  id="ppl" class="mt-2 w-full px-4 py-2 border-2 border-[#94a4db] opacity-80 rounded-lg text-base transition-all duration-300 focus:outline-none focus:border-[#7738c7] focus:ring-4 focus:ring-[#592b96]/20">
+                </div>
+                <button id="calculate-btn"  class="calculate-btn w-full bg-[#94a4db] text-white p-4 rounded-lg font-semibold hover:bg-[#7738c7] transform hover:-translate-y-[3px] transition-all duration-300 ease-in-out" onclick="calculateTip()">Calculate Split</button>
+            </div>
+
+            <div class="calculation basis-1/2 md:basis-3/5 h-[70%]">
+                <h3 class="md:text-2xl text-base font-bold calc-gradient mb-2 pt-2 pl-2">Breakdown</h3>
+                <div class="breakdown flex flex-wrap md:gap-6 gap-4 opacity-95">
+                    <div class="breakdown-card flex flex-col w-[95%] md:w-[45%] bg-[#f7f8fa] rounded-lg border-2 border-tipCalc shadow-md shadow-tip-shadow">
+                        <h3 class="text-base font-medium text-[rgba(44,41,88,255)] mb-2 pt-2 pl-2">Tip Amount</h3>
+                        <span id="tipAmt" class="text-3xl md:text-4xl font-bold pl-4 pb-2 calc-gradient">$0</span>
+                    </div>
+                    <div class="breakdown-card flex flex-col w-[95%]  md:w-[45%] bg-[#f7f8fa] rounded-lg border-2 border-tipCalc shadow-md shadow-tip-shadow">
+                        <h3 class="text-base font-medium text-[rgba(44,41,88,255)] mb-2 pt-2 pl-2">Total Bill</h3>
+                        <span id="total" class="text-3xl md:text-4xl font-bold pl-4 pb-2 calc-gradient">$0</span>   
+                    </div>
+                    <div class="breakdown-card flex flex-col w-[95%]  md:w-[45%] bg-[#f7f8fa] rounded-lg border-2 border-tipCalc shadow-md shadow-tip-shadow">
+                        <h3 class="text-base font-medium text-[rgba(44,41,88,255)] mb-2 pt-2 pl-2">Per Person</h3>
+                        <span id="perPerson" class="text-3xl md:text-4xl font-bold pl-4 pb-2 calc-gradient">$0</span>
+                    </div>
+                    <div class="breakdown-card flex flex-col w-[95%]  md:w-[45%] bg-[#f7f8fa] rounded-lg border-2 border-tipCalc shadow-md shadow-tip-shadow">
+                        <h3 class="text-base font-medium text-[rgba(44,41,88,255)] mb-2 pt-2 pl-2">Tip Per Person</h3>
+                        <span id="tipPerPerson" class="text-3xl md:text-4xl font-bold pl-4 pb-2 calc-gradient">$0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./tipCalc.js"></script>
+</body>
+</html>
