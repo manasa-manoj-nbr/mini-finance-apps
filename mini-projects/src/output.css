@@ -957,10 +957,6 @@ video {
   background-image: linear-gradient(to right, #60a5fa, #a78bfa);
 }
 
-.bg-\[url\(\'\.\/tipCalc\/tipBuddy\.jpg\'\)\] {
-  background-image: url('./tipCalc/tipBuddy.jpg');
-}
-
 .bg-loan {
   background-image: linear-gradient(to left, #2b342f, #697c72);
 }
@@ -969,20 +965,12 @@ video {
   background-image: linear-gradient(to left, #818985, #adbcb3);
 }
 
-.bg-55 {
-  background-size: 55%;
-}
-
 .bg-cover {
   background-size: cover;
 }
 
 .bg-fixed {
   background-attachment: fixed;
-}
-
-.bg-center {
-  background-position: center;
 }
 
 .bg-left {
@@ -1567,8 +1555,8 @@ video {
     border-right-width: 1px;
   }
 
-  .md\:bg-\[url\(\'\.\/loanCalc\/loan\.jpg\'\)\] {
-    background-image: url('./loanCalc/loan.jpg');
+  .md\:bg-\[url\(\'\.\.\/src\/loanCalc\/loan\.jpg\'\)\] {
+    background-image: url('../src/loanCalc/loan.jpg');
   }
 
   .md\:bg-\[length\:40\%\] {
